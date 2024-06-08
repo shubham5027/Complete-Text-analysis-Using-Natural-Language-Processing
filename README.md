@@ -4,6 +4,11 @@
 
 The Complete Text Analysis App is a Streamlit-based web application that provides various text analysis functionalities. The app includes features for spam detection, sentiment analysis, stress detection, hate and offensive content detection, and sarcasm detection. It leverages Natural Language Processing (NLP) techniques and machine learning models to analyze and classify text inputs.
 
+App URL (Deploy on Hugging Face) :https://huggingface.co/spaces/shubham5027/Text_Analysis_NLP
+
+Streamlit Cloud: https://complete-text-analysis-using-natural-language-processing-3abm4.streamlit.app/
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -135,6 +140,12 @@ Here are some examples of how to use the app:
 - Detect stress levels in a piece of text.
 - Identify offensive content in user comments.
 - Check if a statement is sarcastic.
+
+
+![Screenshot 2024-06-08 232125](https://github.com/shubham5027/Complete-Text-analysis-Using-Natural-Language-Processing/assets/132193443/f56fce62-8778-4c95-9c45-54132230b452)
+
+- ![Screenshot 2024-06-08 232212](https://github.com/shubham5027/Complete-Text-analysis-Using-Natural-Language-Processing/assets/132193443/ae832f9f-b6a4-40db-9b4b-dc588769f286)
+
 
 ## Troubleshooting
 
