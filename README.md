@@ -151,5 +151,3 @@ Here are some examples of how to use the app:
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
-
-Feel free to customize this README further based on your project's specific details or additional information you might have.
