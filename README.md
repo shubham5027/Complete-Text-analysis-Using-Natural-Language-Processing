@@ -1,74 +1,155 @@
-<h1 align="center">
-             Complete Text Analysis Web App 💬 📝 ✍️
-</h1>
+# Complete Text Analysis App
 
-![image](https://user-images.githubusercontent.com/78029145/154792740-dadca757-5424-4e4c-af69-fc3a5055af3b.png)
+## Introduction
 
-This app is used to perform an indepth analysis of a text
-The analysis sections include ->
+The Complete Text Analysis App is a Streamlit-based web application that provides various text analysis functionalities. The app includes features for spam detection, sentiment analysis, stress detection, hate and offensive content detection, and sarcasm detection. It leverages Natural Language Processing (NLP) techniques and machine learning models to analyze and classify text inputs.
 
-**1. Spam or Ham Detection**
+## Table of Contents
 
-**2. Sentiment Analysis**
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
+- [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
+- [License](#license)
 
-**3. Stress Detection**
+## Features
 
-**4. Hate & Offensive Content Detection**
+1. **Spam or Ham Detection**
+   - Classifies text as spam or ham.
+2. **Sentiment Analysis**
+   - Detects the sentiment of the text (positive or negative).
+3. **Stress Detection**
+   - Determines the level of stress in the text.
+4. **Hate and Offensive Content Detection**
+   - Identifies the level of hate and offensive content in the text.
+5. **Sarcasm Detection**
+   - Detects whether the text is sarcastic or not.
 
-**5. Sarcasm Detection**
+## Installation
 
-## Tech Stacks Used
+To install and run the Complete Text Analysis App, follow these steps:
 
-<img src="https://img.shields.io/badge/python%20-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/complete-text-analysis-app.git
+   cd complete-text-analysis-app
+   ```
 
-## Libraries Used
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<img src="https://img.shields.io/badge/numpy%20-%2314354C.svg?&style=for-the-badge&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/pandas%20-%2314354C.svg?&style=for-the-badge&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/streamlit%20-%2314354C.svg?&style=for-the-badge&logo=streamlit&logoColor=white"/> <img src="https://img.shields.io/badge/nltk%20-%2314354C.svg?&style=for-the-badge&logo=nltk&logoColor=white"/> <img src="https://img.shields.io/badge/scikitlearn%20-%2314354C.svg?&style=for-the-badge&logo=scikitlearn&logoColor=white"/>
+3. Download NLTK data:
+   ```python
+   import nltk
+   nltk.download('punkt')
+   nltk.download('stopwords')
+   ```
 
-## Structure Of The Project
+4. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
 
-- Each prediction page is conneceted with a Machine Learning Model which uses either of Logistic Regression, Decision Tree, Random Forest Algorithms to predict the results.
-- Also we have 5 different datasets being used for each prediction.
-- We can land into each prediction site of the web app from the options in the Navigation Menu.
-- We have only 1 relevant feature taken into consideration which is the text and then the text is preprocessed and vectoized with help of TF-IDF Vectorizer to fit into the model and tain it.
-- So the user gets a broad overview of the text after the analysis
+## Usage
 
-## The feature taken into consideration
+1. Navigate to the app in your web browser.
+2. Use the sidebar to select the desired analysis option:
+   - Home
+   - Spam or Ham Detection
+   - Sentiment Analysis
+   - Stress Detection
+   - Hate and Offensive Content Detection
+   - Sarcasm Detection
+3. Enter the text you want to analyze in the provided text area.
+4. Click the "Predict" button to get the analysis results.
 
-| Text Analysis Type | Feature |
-| - | - |
-| Spam or Ham Detection Page | Text |
-| Sentiment Analysis Page | Text |
-| Stress Detection Page | Text |
-| Hate & Offensive Content Page | Text |
-| Sarcasm Detection | Text |
+## Dependencies
 
-The text is preprocessed then fed to the model.
+- Python 3.x
+- Streamlit
+- NumPy
+- Pandas
+- NLTK
+- Scikit-learn
 
-## Deployment Of The Project
+## Configuration
 
-After the modeling part the model is deployed using Streamlit library on Streamlit Share so that the app is available for usage for everyone.
+Ensure you have the following CSV files in the same directory as `app.py`:
 
-## Link To My Web Application -
+- Spam Detection.csv
+- Sentiment Analysis.csv
+- Stress Detection.csv
+- Hate Content Detection.csv
+- Sarcasm Detection.csv
 
-https://share.streamlit.io/bhaswatiroy/complete-text-analysis-streamlit-web-app/main/app.py
+The CSV files should have the following columns:
+- Spam Detection.csv: `Label`, `Text`
+- Sentiment Analysis.csv: `Text`, `Label`
+- Stress Detection.csv: `Text`, `Sentiment`, `Stress Level`
+- Hate Content Detection.csv: `Hate Level`, `Offensive Level`, `Class Level`, `Text`
+- Sarcasm Detection.csv: `Text`, `Label`
 
-## Glance At The Hosted Application- 
+## Documentation
 
-### 1. Home Page
-![image](https://user-images.githubusercontent.com/78029145/154792997-c60376bb-411a-4624-aeeb-f552416a8cfb.png)
+### Text Cleaning and Transformation
 
-### 2. Spam or Ham Detection Page
-![image](https://user-images.githubusercontent.com/78029145/154802534-75818785-70a8-46ff-99cc-adfef7b0c95b.png)
+The `transform_text` function cleans and preprocesses the text input by:
+- Converting to lowercase
+- Tokenizing words
+- Removing stopwords and punctuation
+- Stemming the words
 
-### 3. Sentiment Analysis Page
-![image](https://user-images.githubusercontent.com/78029145/154802666-e9d3ecff-4341-49c5-89ea-40301bbc51a3.png)
+### Model Training
 
-### 4. Stress Detection Page
-![image](https://user-images.githubusercontent.com/78029145/154802705-197c0f6a-72f4-4604-aebd-10052de7f4fb.png)
+Each analysis option has its own model training setup using the provided CSV files. The models are trained using Scikit-learn classifiers and vectorizers.
 
-### 5. Hate & Offensive Content Page
-![image](https://user-images.githubusercontent.com/78029145/154802808-7b14fb2f-08cd-4d4a-919a-31d758268dfb.png)
+### Spam Detection
+- Uses Logistic Regression and TF-IDF Vectorizer.
 
-### 6. Sarcasm Detection Page
-![image](https://user-images.githubusercontent.com/78029145/154803109-95c09327-edd8-4da8-992f-06c55f709996.png)
+### Sentiment Analysis
+- Uses Logistic Regression and TF-IDF Vectorizer.
+
+### Stress Detection
+- Uses Decision Tree Regressor and TF-IDF Vectorizer.
+
+### Hate and Offensive Content Detection
+- Uses Random Forest Classifier and TF-IDF Vectorizer.
+
+### Sarcasm Detection
+- Uses Logistic Regression and TF-IDF Vectorizer.
+
+## Examples
+
+Here are some examples of how to use the app:
+
+- Enter a text message to check if it's spam or ham.
+- Analyze the sentiment of a social media post.
+- Detect stress levels in a piece of text.
+- Identify offensive content in user comments.
+- Check if a statement is sarcastic.
+
+## Troubleshooting
+
+- Ensure all CSV files are correctly formatted and placed in the same directory as `app.py`.
+- Verify that all dependencies are installed.
+- Check for any errors in the console for more details on issues.
+
+## Contributors
+
+- https://github.com/shubham5027
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Feel free to customize this README further based on your project's specific details or additional information you might have.
