@@ -37,7 +37,7 @@ To install and run the Complete Text Analysis App, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/complete-text-analysis-app.git
+   git clone https://github.com/yourusername/complete-text-analysis-Using-Natural-Language-Processing.git
    cd complete-text-analysis-app
    ```
 
