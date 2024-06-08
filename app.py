@@ -23,7 +23,7 @@ rad=st.sidebar.radio("Navigation",["Home","Spam or Ham Detection","Sentiment Ana
 #Home Page
 if rad=="Home":
     st.title("Complete Text Analysis App")
-    st.image("Complete Text Analysis Home Page.jpg")
+    st.image("SEO-articles-V2_Text-Analysis.png")
     st.text(" ")
     st.text("The Following Text Analysis Options Are Available->")
     st.text(" ")
